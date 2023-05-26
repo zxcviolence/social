@@ -9,9 +9,8 @@ import Comments from "../comments";
 import "./post.scss";
 
 const Post = ({ post }) => {
-  const liked = false;
-
   const [commentOpen, setCommentOpen] = useState(false);
+  const [liked, setLiked] = useState(false);
 
   return (
     <div className="post">
@@ -36,8 +35,12 @@ const Post = ({ post }) => {
           <img src={post.img} alt="" />
         </div>
         <div className="info">
-          <div className="item">
-            {liked ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}{" "}
+          <div className="item" onClick={() => setLiked(!liked)}>
+            {liked ? (
+              <FavoriteOutlinedIcon style={{ color: "red" }} />
+            ) : (
+              <FavoriteBorderOutlinedIcon />
+            )}{" "}
             12 likes
           </div>
           <div className="item" onClick={() => setCommentOpen(!commentOpen)}>

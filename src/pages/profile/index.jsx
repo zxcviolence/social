@@ -1,14 +1,13 @@
-import "./profile.scss";
 import Posts from "../../components/posts";
 import FacebookTwoToneIcon from "@mui/icons-material/FacebookTwoTone";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import PinterestIcon from "@mui/icons-material/Pinterest";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import PlaceIcon from "@mui/icons-material/Place";
 import LanguageIcon from "@mui/icons-material/Language";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import "./profile.scss";
 
 const Profile = () => {
   return (
@@ -20,7 +19,7 @@ const Profile = () => {
           className="cover"
         />
         <img
-          src="https://otkrit-ka.ru/uploads/posts/2022-02/foto-i-krasivye-kartinki-na-avu-v-kontakte-2.jpg"
+          src="https://anime-fans.ru/wp-content/uploads/2021/02/Smeshnye-anime-avy-v-luchshem-kachestve-26.jpeg"
           alt=""
           className="profilePic"
         />
@@ -40,12 +39,9 @@ const Profile = () => {
             <a href="http://facebook.com">
               <LinkedInIcon fontSize="large" />
             </a>
-            <a href="http://facebook.com">
-              <PinterestIcon fontSize="large" />
-            </a>
           </div>
           <div className="center">
-            <span>Jane Doe</span>
+            <span>Rylie Leyla</span>
             <div className="info">
               <div className="item">
                 <PlaceIcon />
@@ -53,7 +49,7 @@ const Profile = () => {
               </div>
               <div className="item">
                 <LanguageIcon />
-                <span>ripperAVGN</span>
+                <span>zxcviolence</span>
               </div>
             </div>
             <button>follow</button>

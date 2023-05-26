@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/authContext";
 import { DarkModeContext } from "../../context/darkModeContext";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
@@ -10,12 +11,11 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import "./navbar.scss";
-import { AuthContext } from "../../context/authContext";
 
 const Navbar = () => {
   const { toogle, darkMode } = useContext(DarkModeContext);
   const { currentUser } = useContext(AuthContext);
-
+  
   return (
     <div className="navbar">
       <div className="left">
@@ -24,9 +24,9 @@ const Navbar = () => {
         </Link>
         <HomeOutlinedIcon />
         {darkMode ? (
-          <WbSunnyOutlinedIcon onClick={toogle} />
+            <WbSunnyOutlinedIcon onClick={toogle} />
         ) : (
-          <DarkModeOutlinedIcon onClick={toogle} />
+            <DarkModeOutlinedIcon onClick={toogle} />
         )}
         <GridViewOutlinedIcon />
         <div className="search">
