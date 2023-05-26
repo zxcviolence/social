@@ -1,6 +1,6 @@
-import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { DarkModeContext } from "../../context/darkModeContext.jsx";
+import { DarkModeContext } from "../../context/darkModeContext";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
@@ -10,9 +10,11 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import "./navbar.scss";
+import { AuthContext } from "../../context/authContext";
 
 const Navbar = () => {
-  const { toogle, darkMode } = React.useContext(DarkModeContext);
+  const { toogle, darkMode } = useContext(DarkModeContext);
+  const { currentUser } = useContext(AuthContext);
 
   return (
     <div className="navbar">
@@ -37,11 +39,8 @@ const Navbar = () => {
         <EmailOutlinedIcon />
         <NotificationsOutlinedIcon />
         <div className="user">
-          <img
-            src="https://anime-fans.ru/wp-content/uploads/2021/05/Kreativnye-anime-avatarki-dlya-stima-v-luchshem-kachestve_01.jpg"
-            alt=""
-          />
-          <span>No Brain</span>
+          <img src={currentUser.image} alt="avatar" />
+          <span>{currentUser.name}</span>
         </div>
       </div>
     </div>

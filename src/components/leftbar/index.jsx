@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
 import Friends from "../../assets/1.png";
 import Groups from "../../assets/2.png";
 import Market from "../../assets/3.png";
@@ -14,16 +16,15 @@ import Fund from "../../assets/13.png";
 import "./leftbar.scss";
 
 const Leftbar = () => {
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="leftbar">
       <div className="container">
         <div className="menu">
           <div className="user">
-            <img
-              src="https://anime-fans.ru/wp-content/uploads/2021/05/Kreativnye-anime-avatarki-dlya-stima-v-luchshem-kachestve_01.jpg"
-              alt=""
-            />
-            <span>No Brain</span>
+            <img src={currentUser.image} alt="" />
+            <span>{currentUser.name}</span>
           </div>
           <div className="items">
             <img src={Friends} alt="" />
