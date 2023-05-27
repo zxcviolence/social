@@ -8,7 +8,7 @@ const DarkModeContextProvider = ({ children }) => {
   );
 
   const toggle = () => {
-    setDarkMode(!!!darkMode);
+    setDarkMode(!darkMode);
   };
 
   useEffect(() => {
