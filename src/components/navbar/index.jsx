@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
-import { DarkModeContext } from "../../context/darkModeContext";
+import { useSelector } from "react-redux";
+import { switchTheme } from "../../features/themeSlice";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
@@ -13,9 +14,9 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import "./navbar.scss";
 
 const Navbar = () => {
-  const { toogle, darkMode } = useContext(DarkModeContext);
   const { currentUser } = useContext(AuthContext);
-  
+  const darkMode = useSelector((state) => state.darkTheme.darkMode);
+
   return (
     <div className="navbar">
       <div className="left">
@@ -24,9 +25,9 @@ const Navbar = () => {
         </Link>
         <HomeOutlinedIcon />
         {darkMode ? (
-            <WbSunnyOutlinedIcon onClick={toogle} />
+          <WbSunnyOutlinedIcon onClick={() => console.log(switchTheme())} />
         ) : (
-            <DarkModeOutlinedIcon onClick={toogle} />
+          <DarkModeOutlinedIcon onClick={() => console.log(switchTheme())} />
         )}
         <GridViewOutlinedIcon />
         <div className="search">

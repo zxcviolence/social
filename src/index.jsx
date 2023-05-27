@@ -1,16 +1,17 @@
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import DarkModeContextProvider from "./context/darkModeContext";
-import AuthContextProvider from "./context/authContext";
+import { AuthContextProvider } from "./context/authContext";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <DarkModeContextProvider>
+    <Provider store={store}>
       <AuthContextProvider>
         <App />
       </AuthContextProvider>
-    </DarkModeContextProvider>
+    </Provider>
   </BrowserRouter>
 );
