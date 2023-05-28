@@ -1,7 +1,8 @@
 import React from "react";
 import { Routes, Route, Outlet, Navigate } from "react-router-dom";
-import { AuthContext } from "./context/authContext";
 import { DarkModeContext } from "./context/darkModeContext";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import Navbar from "./components/navbar";
@@ -12,7 +13,8 @@ import Profile from "./pages/profile";
 import "./style.scss";
 
 function App() {
-  const { currentUser } = React.useContext(AuthContext);
+  const currentUser = useSelector(selectUser);
+
   const { darkMode } = React.useContext(DarkModeContext);
 
   const Layout = () => {
@@ -30,11 +32,11 @@ function App() {
     );
   };
 
-  const ProtectedRoute = ({ children }) => {
+  const ProtectedRoute = () => {
     if (!currentUser) {
       return <Navigate to="/login" />;
     }
-    return children;
+    return <Layout />;
   };
 
   return (

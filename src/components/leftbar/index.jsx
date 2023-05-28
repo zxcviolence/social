@@ -1,5 +1,6 @@
 import React from "react";
-import { AuthContext } from "../../context/authContext";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/userSlice";
 import Friends from "../../assets/icons/1.png";
 import Groups from "../../assets/icons/2.png";
 import Market from "../../assets/icons/3.png";
@@ -16,7 +17,7 @@ import Fund from "../../assets/icons/13.png";
 import "./leftbar.scss";
 
 const Leftbar = () => {
-  const { currentUser } = React.useContext(AuthContext);
+  const currentUser = useSelector(selectUser);
 
   return (
     <div className="leftbar">

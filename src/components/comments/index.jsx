@@ -1,5 +1,6 @@
 import React from "react";
-import { AuthContext } from "../../context/authContext";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/userSlice";
 import john from "../../assets/avatars/jonhdoeAv.jpg";
 import jane from "../../assets/avatars/janedoeAv.jpg";
 import "./comments.scss";
@@ -22,7 +23,7 @@ const comments = [
 ];
 
 const Comments = () => {
-  const { currentUser } = React.useContext(AuthContext);
+  const currentUser = useSelector(selectUser);
 
   return (
     <div className="comments">

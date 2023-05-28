@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../context/authContext";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/userSlice";
 import { DarkModeContext } from "../../context/darkModeContext";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
@@ -13,7 +14,8 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import "./navbar.scss";
 
 const Navbar = () => {
-  const { currentUser } = React.useContext(AuthContext);
+  const currentUser = useSelector(selectUser);
+
   const { toggle, darkMode } = React.useContext(DarkModeContext);
 
   return (

@@ -1,14 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../context/authContext";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/userSlice";
 import "./login.scss";
 
 const Login = () => {
-  const { login } = React.useContext(AuthContext);
+  const authUser = useSelector(selectUser);
 
-  const handleLogin = () => {
-    login();
+  const [currentUser, setCurrentUser] = React.useState(
+    JSON.parse(localStorage.getItem("user")) || false
+  );
+
+  const login = () => {
+    setCurrentUser(authUser);
   };
+
+  React.useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(currentUser));
+  }, [currentUser]);
+
   return (
     <div className="login">
       <div className="cart">
@@ -31,7 +41,7 @@ const Login = () => {
           <form>
             <input type="text" placeholder="Имя пользователя" />
             <input type="password" placeholder="Пароль" />
-            <button onClick={handleLogin}>Войти</button>
+            <button onClick={() => login()}>Войти</button>
           </form>
         </div>
       </div>

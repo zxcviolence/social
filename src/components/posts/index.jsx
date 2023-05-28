@@ -3,7 +3,6 @@ import leyla from "../../assets/avatars/leylaAv.jpeg";
 import janeAv from "../../assets/avatars/janedoeAv.jpg";
 import leylaPostImg from "../../assets/postImage/leylaPost.jpg";
 import janePostImg from "../../assets/postImage/janedoePost.jpg";
-
 import "./posts.scss";
 
 const posts = [

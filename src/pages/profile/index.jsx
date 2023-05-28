@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Posts from "../../components/posts";
 import FacebookTwoToneIcon from "@mui/icons-material/FacebookTwoTone";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -21,18 +22,18 @@ const Profile = () => {
       <div className="profileContainer">
         <div className="uInfo">
           <div className="left">
-            <a href="http://facebook.com">
+            <Link to="http://facebook.com">
               <FacebookTwoToneIcon fontSize="large" />
-            </a>
-            <a href="http://facebook.com">
+            </Link>
+            <Link to="http://facebook.com">
               <InstagramIcon fontSize="large" />
-            </a>
-            <a href="http://facebook.com">
+            </Link>
+            <Link to="http://facebook.com">
               <TwitterIcon fontSize="large" />
-            </a>
-            <a href="http://facebook.com">
+            </Link>
+            <Link to="http://facebook.com">
               <LinkedInIcon fontSize="large" />
-            </a>
+            </Link>
           </div>
           <div className="center">
             <span>Rylie Leyla</span>
