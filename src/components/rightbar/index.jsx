@@ -18,7 +18,7 @@ const Rightbar = () => {
           <span>Рекомендовано для вас</span>
           <div className="user">
             <div className="userInfo">
-              <img src={selma} alt="" />
+              <img src={selma} alt="avatar" />
               <span>Selma Driscoll</span>
             </div>
             <div className="buttons">
@@ -28,7 +28,7 @@ const Rightbar = () => {
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src={malcolm} alt="" />
+              <img src={malcolm} alt="avatar" />
               <span>Malcolm Case</span>
             </div>
             <div className="buttons">
@@ -41,7 +41,7 @@ const Rightbar = () => {
           <span>Последние действия</span>
           <div className="user">
             <div className="userInfo">
-              <img src={jane} alt="" />
+              <img src={jane} alt="avatar" />
               <p>
                 <span>Jane Doe</span> изменила обложку профиля
               </p>
@@ -50,7 +50,7 @@ const Rightbar = () => {
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src={john} alt="" />
+              <img src={john} alt="avatar" />
               <p>
                 <span>John Doe</span> понравился пост
               </p>
@@ -59,7 +59,7 @@ const Rightbar = () => {
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src={john} alt="" />
+              <img src={john} alt="avatar" />
               <p>
                 <span>John Doe</span> понравился комментарий
               </p>
@@ -68,7 +68,7 @@ const Rightbar = () => {
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src={jane} alt="" />
+              <img src={jane} alt="avatar" />
               <p>
                 <span>Jane Doe</span> опубликовала пост
               </p>
@@ -80,56 +80,56 @@ const Rightbar = () => {
           <span>Друзья в сети</span>
           <div className="user">
             <div className="userInfo">
-              <img src={chelsey} alt="" />
+              <img src={chelsey} alt="avatar" />
               <div className="online" />
               <span>Chelsey Sidney</span>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src={jae} alt="" />
+              <img src={jae} alt="avatar" />
               <div className="online" />
               <span>Jae Jocelyn</span>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src={sal} alt="" />
+              <img src={sal} alt="avatar" />
               <div className="online" />
               <span>Sal Rube</span>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src={jane} alt="" />
+              <img src={jane} alt="avatar" />
               <div className="online" />
               <span>Jane Doe</span>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src={john} alt="" />
+              <img src={john} alt="avatar" />
               <div className="online" />
               <span>John Doe</span>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src={dustin} alt="" />
+              <img src={dustin} alt="avatar" />
               <div className="online" />
               <span>Dustin Jules</span>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src={cullen} alt="" />
+              <img src={cullen} alt="avatar" />
               <div className="online" />
               <span>Cullen Roxane</span>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
-              <img src={leyla} alt="" />
+              <img src={leyla} alt="avatar" />
               <div className="online" />
               <span>Rylie Leyla</span>
             </div>
