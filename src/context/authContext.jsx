@@ -1,17 +1,22 @@
-import { useState, useEffect, createContext } from "react";
+import React from "react";
 
-export const AuthContext = createContext();
+export const AuthContext = React.createContext();
 
 export const AuthContextProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(
+  const [currentUser, setCurrentUser] = React.useState(
     JSON.parse(localStorage.getItem("user")) || false
   );
 
   const login = () => {
-    setCurrentUser({id: 1, name: "No Brain", image: "https://anime-fans.ru/wp-content/uploads/2021/05/Kreativnye-anime-avatarki-dlya-stima-v-luchshem-kachestve_01.jpg"});
+    setCurrentUser({
+      id: 1,
+      name: "No Brain",
+      image:
+        "https://anime-fans.ru/wp-content/uploads/2021/05/Kreativnye-anime-avatarki-dlya-stima-v-luchshem-kachestve_01.jpg",
+    });
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     localStorage.setItem("user", JSON.stringify(currentUser));
   }, [currentUser]);
 

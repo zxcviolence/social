@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React from "react";
 import { AuthContext } from "../../context/authContext";
 import "./comments.scss";
 
@@ -21,7 +21,7 @@ const comments = [
 ];
 
 const Comments = () => {
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser } = React.useContext(AuthContext);
 
   return (
     <div className="comments">

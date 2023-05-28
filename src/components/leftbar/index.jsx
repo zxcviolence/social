@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React from "react";
 import { AuthContext } from "../../context/authContext";
 import Friends from "../../assets/1.png";
 import Groups from "../../assets/2.png";
@@ -16,7 +16,7 @@ import Fund from "../../assets/13.png";
 import "./leftbar.scss";
 
 const Leftbar = () => {
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser } = React.useContext(AuthContext);
 
   return (
     <div className="leftbar">

@@ -1,7 +1,7 @@
-import { useContext } from "react";
+import React from "react";
 import { Routes, Route, Outlet, Navigate } from "react-router-dom";
 import { AuthContext } from "./context/authContext";
-import { useSelector } from "react-redux";
+import { DarkModeContext } from "./context/darkModeContext";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import Navbar from "./components/navbar";
@@ -12,9 +12,8 @@ import Profile from "./pages/profile";
 import "./style.scss";
 
 function App() {
-  const { currentUser } = useContext(AuthContext);
-
-  const darkMode = useSelector((state) => state.darkTheme.darkMode);
+  const { currentUser } = React.useContext(AuthContext);
+  const { darkMode } = React.useContext(DarkModeContext);
 
   const Layout = () => {
     return (

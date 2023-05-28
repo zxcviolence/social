@@ -1,5 +1,5 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import TextsmsOutlinedIcon from "@mui/icons-material/TextsmsOutlined";
@@ -9,8 +9,8 @@ import Comments from "../comments";
 import "./post.scss";
 
 const Post = ({ post }) => {
-  const [commentOpen, setCommentOpen] = useState(false);
-  const [liked, setLiked] = useState(false);
+  const [commentOpen, setCommentOpen] = React.useState(false);
+  const [liked, setLiked] = React.useState(false);
 
   return (
     <div className="post">
