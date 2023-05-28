@@ -13,24 +13,25 @@ const Login = () => {
     <div className="login">
       <div className="cart">
         <div className="left">
-          <h1>Hello World.</h1>
+          <h1>Welcome</h1>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum odit
-            consequatur doloremque iure fuga aperiam accusantium, tempore
-            delectus architecto dolores pariatur. Dolores eligendi porro rerum,
-            nobis aut culpa. Vitae, vel.
+            Ключевые ценности DexSocial — наши пользователи и команда. Соединяя
+            миллионы людей и передовые технологии, мы создаём простые и удобные
+            сервисы, которые позволяют общаться с друзьями, развивать бизнес,
+            учиться и отдыхать, заниматься повседневными вопросами, получать
+            новые впечатления, делиться ими — и многое другое.
           </p>
-          <span>Don't you have an account?</span>
+          <span>Нет аккаунта?</span>
           <Link to="/register">
-            <button>Register</button>
+            <button>Регистрация</button>
           </Link>
         </div>
         <div className="right">
-          <h1>Login</h1>
+          <h1>Вход</h1>
           <form>
-            <input type="text" placeholder="Username" />
-            <input type="password" placeholder="Password" />
-            <button onClick={handleLogin}>Login</button>
+            <input type="text" placeholder="Имя пользователя" />
+            <input type="password" placeholder="Пароль" />
+            <button onClick={handleLogin}>Войти</button>
           </form>
         </div>
       </div>

@@ -7,25 +7,20 @@ const Register = () => {
       <div className="cart">
         <div className="left">
           <h1>Hello World.</h1>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum odit
-            consequatur doloremque iure fuga aperiam accusantium, tempore
-            delectus architecto dolores pariatur. Dolores eligendi porro rerum,
-            nobis aut culpa. Vitae, vel.
-          </p>
-          <span>Do you have an account?</span>
+          <p>DexSocial - крупнейшая социальная сеть в России и странах СНГ. Наша миссия — соединять людей, сервисы и компании, создавая простые и удобные инструменты коммуникации.</p>
+          <span>Уже есть аккаунт?</span>
           <Link to="/login">
-            <button>Login</button>
+            <button>Войти</button>
           </Link>
         </div>
         <div className="right">
-          <h1>Login</h1>
+          <h1>Регистрация</h1>
           <form>
-            <input type="text" placeholder="Username" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <input type="text" placeholder="Name" />
-            <button>Register</button>
+            <input type="text" placeholder="Имя пользователя" />
+            <input type="email" placeholder="Электронная почта" />
+            <input type="password" placeholder="Пароль" />
+            <input type="password" placeholder="Подтвердить пароль" />
+            <button>Зарегистрироваться</button>
           </form>
         </div>
       </div>

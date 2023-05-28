@@ -7,22 +7,16 @@ import PlaceIcon from "@mui/icons-material/Place";
 import LanguageIcon from "@mui/icons-material/Language";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import leyla from "../../assets/avatars/leylaAv.jpeg";
+import coverPic from "../../assets/coverPics/cover.jpg";
 import "./profile.scss";
 
 const Profile = () => {
   return (
     <div className="profile">
       <div className="images">
-        <img
-          src="https://abrakadabra.fun/uploads/posts/2022-03/1646664130_1-abrakadabra-fun-p-oboi-dlya-rabochego-stola-anime-peizazhi-1.jpg"
-          alt=""
-          className="cover"
-        />
-        <img
-          src="https://anime-fans.ru/wp-content/uploads/2021/02/Smeshnye-anime-avy-v-luchshem-kachestve-26.jpeg"
-          alt=""
-          className="profilePic"
-        />
+        <img src={coverPic} alt="coverPic" className="cover" />
+        <img src={leyla} alt="avatar" className="profilePic" />
       </div>
       <div className="profileContainer">
         <div className="uInfo">
@@ -45,14 +39,14 @@ const Profile = () => {
             <div className="info">
               <div className="item">
                 <PlaceIcon />
-                <span>USA</span>
+                <span>Москва</span>
               </div>
               <div className="item">
                 <LanguageIcon />
                 <span>zxcviolence</span>
               </div>
             </div>
-            <button>follow</button>
+            <button>Подписаться</button>
           </div>
           <div className="right">
             <EmailOutlinedIcon />
