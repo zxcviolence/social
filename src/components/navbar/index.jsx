@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
-import { DarkModeContext } from "../../context/darkModeContext";
+import { selectTheme } from "../../features/themeSlice";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
@@ -16,7 +16,18 @@ import "./navbar.scss";
 const Navbar = () => {
   const currentUser = useSelector(selectUser);
 
-  const { toggle, darkMode } = React.useContext(DarkModeContext);
+  const switchTheme = useSelector(selectTheme);
+
+  const [darkMode, setDarkMode] = React.useState(switchTheme);
+
+  const toggle = () => {
+    setDarkMode(!darkMode);
+    location.reload();
+  };
+
+  React.useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
+  }, [darkMode]);
 
   return (
     <div className="navbar">

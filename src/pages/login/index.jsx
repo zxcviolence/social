@@ -38,7 +38,7 @@ const Login = () => {
         </div>
         <div className="right">
           <h1>Вход</h1>
-          <form>
+          <form >
             <input type="text" placeholder="Имя пользователя" />
             <input type="password" placeholder="Пароль" />
             <button onClick={() => login()}>Войти</button>
