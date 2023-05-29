@@ -1,139 +1,61 @@
-import chelsey from "../../assets/avatars/chelseyAv.jpg";
-import cullen from "../../assets/avatars/cullenAv.jpg";
-import dustin from "../../assets/avatars/dustinAv.jpg";
-import jae from "../../assets/avatars/jaeAv.jpg";
-import jane from "../../assets/avatars/janedoeAv.jpg";
-import john from "../../assets/avatars/jonhdoeAv.jpg";
-import leyla from "../../assets/avatars/leylaAv.jpeg";
-import malcolm from "../../assets/avatars/malkolmAv.jpg";
-import sal from "../../assets/avatars/salAv.jpg";
-import selma from "../../assets/avatars/selmaAv.jpeg";
+import { useSelector } from "react-redux";
+import {
+  selectActions,
+  selectFriends,
+  selectSuggtstions,
+} from "../../features/userDataSlice";
 import "./rightbar.scss";
 
 const Rightbar = () => {
+  const data = useSelector(selectSuggtstions);
+  const actions = useSelector(selectActions);
+  const friends = useSelector(selectFriends);
+
   return (
     <div className="rightbar">
       <div className="container">
         <div className="item">
           <span>Рекомендовано для вас</span>
-          <div className="user">
-            <div className="userInfo">
-              <img src={selma} alt="avatar" />
-              <span>Selma Driscoll</span>
+          {data.map((item) => (
+            <div key={item.id}>
+              <div className="user">
+                <div className="userInfo">
+                  <img src={item.avatar} alt="avatar" />
+                  <span>{item.name}</span>
+                </div>
+                <div className="buttons">
+                  <button>подписаться</button>
+                  <button>отклонить</button>
+                </div>
+              </div>
             </div>
-            <div className="buttons">
-              <button>подписаться</button>
-              <button>отклонить</button>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img src={malcolm} alt="avatar" />
-              <span>Malcolm Case</span>
-            </div>
-            <div className="buttons">
-              <button>подписаться</button>
-              <button>отклонить</button>
-            </div>
-          </div>
+          ))}
         </div>
         <div className="item">
           <span>Последние действия</span>
-          <div className="user">
-            <div className="userInfo">
-              <img src={jane} alt="avatar" />
-              <p>
-                <span>Jane Doe</span> изменила обложку профиля
-              </p>
+          {actions.map((item) => (
+            <div key={item.id} className="user">
+              <div className="userInfo">
+                <img src={item.avatar} alt="avatar" />
+                <p>
+                  <span>{item.name}</span> {item.action}
+                </p>
+              </div>
+              <span>{item.time}</span>
             </div>
-            <span>1 мин назад</span>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img src={john} alt="avatar" />
-              <p>
-                <span>John Doe</span> понравился пост
-              </p>
-            </div>
-            <span>3 мин назад</span>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img src={john} alt="avatar" />
-              <p>
-                <span>John Doe</span> понравился комментарий
-              </p>
-            </div>
-            <span>3 мин назад</span>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img src={jane} alt="avatar" />
-              <p>
-                <span>Jane Doe</span> опубликовала пост
-              </p>
-            </div>
-            <span>4 мин назад</span>
-          </div>
+          ))}
         </div>
         <div className="item">
           <span>Друзья в сети</span>
-          <div className="user">
-            <div className="userInfo">
-              <img src={chelsey} alt="avatar" />
-              <div className="online" />
-              <span>Chelsey Sidney</span>
+          {friends.map((item) => (
+            <div key={item.id} className="user">
+              <div className="userInfo">
+                <img src={item.avatar} alt="avatar" />
+                <div className="online" />
+                <span>{item.name}</span>
+              </div>
             </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img src={jae} alt="avatar" />
-              <div className="online" />
-              <span>Jae Jocelyn</span>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img src={sal} alt="avatar" />
-              <div className="online" />
-              <span>Sal Rube</span>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img src={jane} alt="avatar" />
-              <div className="online" />
-              <span>Jane Doe</span>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img src={john} alt="avatar" />
-              <div className="online" />
-              <span>John Doe</span>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img src={dustin} alt="avatar" />
-              <div className="online" />
-              <span>Dustin Jules</span>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img src={cullen} alt="avatar" />
-              <div className="online" />
-              <span>Cullen Roxane</span>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img src={leyla} alt="avatar" />
-              <div className="online" />
-              <span>Rylie Leyla</span>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
