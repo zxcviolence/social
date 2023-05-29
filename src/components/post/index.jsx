@@ -30,7 +30,7 @@ const Post = () => {
                   >
                     <span className="name">{post.name}</span>
                   </Link>
-                  <span className="date">3 мин назад</span>
+                  <span className="date">{post.time}</span>
                 </div>
               </div>
               <MoreHorizIcon />
