@@ -18,7 +18,7 @@ const Post = () => {
   return (
     <>
       {posts.map((post) => (
-        <div className="post">
+        <div key={post.id} className="post">
           <div className="container">
             <div className="user">
               <div className="userInfo">

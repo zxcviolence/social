@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
 import { selectTheme } from "../../features/themeSlice";
+import { switchTheme } from "../../features/themeSlice";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
@@ -14,26 +15,21 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import "./navbar.scss";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+
   const currentUser = useSelector(selectUser);
 
-  const switchTheme = useSelector(selectTheme);
-
-  const [darkMode, setDarkMode] = React.useState(switchTheme);
+  const darkMode = useSelector(selectTheme);
 
   const toggle = () => {
-    setDarkMode(!darkMode);
-    location.reload();
+    dispatch(switchTheme());
   };
-
-  React.useEffect(() => {
-    localStorage.setItem("darkMode", darkMode);
-  }, [darkMode]);
 
   return (
     <div className="navbar">
       <div className="left">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span>DexSocial</span>
+          <span>ZXCSocial</span>
         </Link>
         <HomeOutlinedIcon />
         {darkMode ? (
