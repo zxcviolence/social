@@ -39,6 +39,7 @@ const initialState = {
   actions: [
     {
       id: 2,
+      userId: 3,
       name: "John Doe",
       avatar: john,
       action: "изменил обложку профиля",
@@ -46,6 +47,7 @@ const initialState = {
     },
     {
       id: 3,
+      userId: 4,
       name: "Dustin Jules",
       avatar: dustin,
       action: "понравился пост",
@@ -53,6 +55,7 @@ const initialState = {
     },
     {
       id: 4,
+      userId: 1,
       name: "Rylie Leyla",
       avatar: leyla,
       action: "понравился комментарий",
@@ -60,6 +63,7 @@ const initialState = {
     },
     {
       id: 5,
+      userId: 2,
       name: "Jane Doe",
       avatar: jane,
       action: "опубликовала пост",

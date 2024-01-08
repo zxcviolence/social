@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import Posts from "../../components/posts";
 import FacebookTwoToneIcon from "@mui/icons-material/FacebookTwoTone";
@@ -10,9 +11,27 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import leyla from "../../assets/avatars/leylaAv.jpeg";
 import coverPic from "../../assets/coverPics/cover.jpg";
+import Swal from "sweetalert2";
 import "./profile.scss";
 
 const Profile = () => {
+  const [sub, setSub] = React.useState(true);
+
+  const subscribe = () => {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+    });
+    Toast.fire({
+      icon: sub ? "success" : "info",
+      title: sub ? "Вы подписались" : "Вы отписались",
+    });
+    setSub(!sub);
+  };
+
   return (
     <div className="profile">
       <div className="images">
@@ -47,7 +66,9 @@ const Profile = () => {
                 <span>zxcviolence</span>
               </div>
             </div>
-            <button>Подписаться</button>
+            <button onClick={() => subscribe(sub)}>
+              {sub ? "Подписаться" : "Отписаться"}
+            </button>
           </div>
           <div className="right">
             <EmailOutlinedIcon />

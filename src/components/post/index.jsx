@@ -17,7 +17,7 @@ const Post = () => {
 
   return (
     <>
-      {posts.map((post) => (
+      {posts.map(post => (
         <div key={post.id} className="post">
           <div className="container">
             <div className="user">
@@ -33,7 +33,7 @@ const Post = () => {
                   <span className="date">{post.time}</span>
                 </div>
               </div>
-              <MoreHorizIcon />
+              <MoreHorizIcon style={{ cursor: "pointer" }} />
             </div>
             <div className="content">
               <p>{post.desc}</p>

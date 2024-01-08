@@ -5,6 +5,7 @@ import {
   selectSuggtstions,
 } from "../../features/userDataSlice";
 import "./rightbar.scss";
+import { Link } from "react-router-dom";
 
 const Rightbar = () => {
   const data = useSelector(selectSuggtstions);
@@ -16,7 +17,7 @@ const Rightbar = () => {
       <div className="container">
         <div className="item">
           <span>Рекомендовано для вас</span>
-          {data.map((item) => (
+          {data.map(item => (
             <div key={item.id}>
               <div className="user">
                 <div className="userInfo">
@@ -33,21 +34,26 @@ const Rightbar = () => {
         </div>
         <div className="item">
           <span>Последние действия</span>
-          {actions.map((item) => (
+          {actions.map(item => (
             <div key={item.id} className="user">
-              <div className="userInfo">
-                <img src={item.avatar} alt="avatar" />
-                <p>
-                  <span>{item.name}</span> {item.action}
-                </p>
-              </div>
+              <Link
+                to={`/profile/${item.userId}`}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <div className="userInfo">
+                  <img src={item.avatar} alt="avatar" />
+                  <p>
+                    <span>{item.name}</span> {item.action}
+                  </p>
+                </div>
+              </Link>
               <span>{item.time}</span>
             </div>
           ))}
         </div>
         <div className="item">
           <span>Друзья в сети</span>
-          {friends.map((item) => (
+          {friends.map(item => (
             <div key={item.id} className="user">
               <div className="userInfo">
                 <img src={item.avatar} alt="avatar" />
