@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route, Outlet, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
-import { selectTheme } from "./features/themeSlice";
+import { DarkModeContext } from "./context/darkModeContext";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import Navbar from "./components/navbar";
@@ -15,7 +15,7 @@ import "./style.scss";
 function App() {
   const currentUser = useSelector(selectUser);
 
-  const darkMode = useSelector(selectTheme);
+  const { darkMode } = React.useContext(DarkModeContext);
 
   const Layout = () => {
     return (
