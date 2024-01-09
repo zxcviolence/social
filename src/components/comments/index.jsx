@@ -7,15 +7,21 @@ import "./comments.scss";
 const Comments = () => {
   const currentUser = useSelector(selectUser);
   const comments = useSelector(selectComment);
+  const [text, setText] = React.useState("");
 
   return (
     <div className="comments">
       <div className="write">
         <img src={currentUser.image} alt="avatar" />
-        <input type="text" placeholder="Напишите свой комментарий" />
+        <input
+          value={text}
+          onChange={e => setText(e.target.value)}
+          type="text"
+          placeholder="Напишите свой комментарий"
+        />
         <button>Отправить</button>
       </div>
-      {comments.map((comment) => (
+      {comments.map(comment => (
         <div className="comment" key={comment.id}>
           <img src={comment.avatar} alt="avatar" />
           <div className="info">

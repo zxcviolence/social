@@ -13,7 +13,13 @@ import "./post.scss";
 const Post = () => {
   const [commentOpen, setCommentOpen] = React.useState(false);
   const [liked, setLiked] = React.useState(false);
+  const [count, setCount] = React.useState(12);
   const posts = useSelector(selectPost);
+
+  const like = () => {
+    setLiked(!liked);
+    setCount(!liked ? count + 1 : count - 1);
+  };
 
   return (
     <>
@@ -40,13 +46,13 @@ const Post = () => {
               <img src={post.img} alt="postPic" />
             </div>
             <div className="info">
-              <div className="item" onClick={() => setLiked(!liked)}>
+              <div className="item" onClick={() => like()}>
                 {liked ? (
                   <FavoriteOutlinedIcon style={{ color: "red" }} />
                 ) : (
                   <FavoriteBorderOutlinedIcon />
                 )}{" "}
-                12 Лайков
+                {count}
               </div>
               <div
                 className="item"

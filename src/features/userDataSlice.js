@@ -159,14 +159,12 @@ const initialState = {
       id: 1,
       desc: "Всё в жизни вредно! Жить тоже вредно, никто не выдерживает — помирают.",
       name: "John Doe",
-      userId: 1,
       avatar: john,
     },
     {
       id: 2,
       desc: "Жить в таком душевном состоянии — невыразимая мука! Неужели не найдется никого, кто бы потихоньку задушил меня, пока я сплю?",
       name: "Jane Doe",
-      userId: 2,
       avatar: jane,
     },
   ],
@@ -177,12 +175,12 @@ export const userDataSlice = createSlice({
   initialState,
 });
 
-export const selectStory = (state) => state.data.stories;
-export const selectPost = (state) => state.data.posts;
-export const selectComment = (state) => state.data.comments;
+export const selectStory = state => state.data.stories;
+export const selectPost = state => state.data.posts;
+export const selectComment = state => state.data.comments;
 
-export const selectFriends = (state) => state.data.friends;
-export const selectSuggtstions = (state) => state.data.suggestions;
-export const selectActions = (state) => state.data.actions;
+export const selectFriends = state => state.data.friends;
+export const selectSuggtstions = state => state.data.suggestions;
+export const selectActions = state => state.data.actions;
 
 export default userDataSlice.reducer;
