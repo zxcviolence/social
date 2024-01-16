@@ -5,7 +5,7 @@ const initialState = {
   currentUser: {
     id: 1,
     name: "No Brain",
-    image: userAvatar,
+    image: "https://polinka.top/uploads/posts/2023-05/thumbs/1684411954_polinka-top-p-cherno-belie-kartinki-anime-klinok-rasseka-42.jpg",
   },
 };
 

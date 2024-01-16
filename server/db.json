@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "id": 1,
+      "comment": "Всё в жизни вредно! Жить тоже вредно, никто не выдерживает — помирают.",
+      "name": "John Doe",
+      "avatar": "https://i.pinimg.com/1200x/2c/50/da/2c50da6818cfb922581a77079835db0d.jpg"
+    },
+    {
+      "id": 2,
+      "comment": "Жить в таком душевном состоянии — невыразимая мука! Неужели не найдется никого, кто бы потихоньку задушил меня, пока я сплю?",
+      "name": "Jane Doe",
+      "avatar": "https://masterpiecer-images.s3.yandex.net/ceac7859705b11eeb75fe6d39d9a42a4:upscaled"
+    },
+    {
+      "comment": "Что разум человека может постигнуть и во что он может поверить, того он способен достичь",
+      "name": "No Brain",
+      "avatar": "https://polinka.top/uploads/posts/2023-05/thumbs/1684411954_polinka-top-p-cherno-belie-kartinki-anime-klinok-rasseka-42.jpg",
+      "id": 3
+    }
+  ]
+}

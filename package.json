@@ -3,11 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"npm run server\" \"vite\" \"react-scripts start\"",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server -w server/db.json -p 3001"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",
@@ -24,6 +25,8 @@
     "sweetalert2": "^11.10.2"
   },
   "devDependencies": {
+    "json-server": "^0.17.4",
+    "concurrently": "^8.2.2",
     "eslint": "^8.38.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",

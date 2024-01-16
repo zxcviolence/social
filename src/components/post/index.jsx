@@ -9,11 +9,13 @@ import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Comments from "../comments";
 import "./post.scss";
+import { useGetCommentsQuery } from "../../app/commentsApi";
 
 const Post = () => {
   const [commentOpen, setCommentOpen] = React.useState(false);
   const [liked, setLiked] = React.useState(false);
   const [count, setCount] = React.useState(12);
+  const { data = [] } = useGetCommentsQuery();
   const posts = useSelector(selectPost);
 
   const like = () => {
@@ -58,7 +60,7 @@ const Post = () => {
                 className="item"
                 onClick={() => setCommentOpen(!commentOpen)}
               >
-                <TextsmsOutlinedIcon />2 Комментария
+                <TextsmsOutlinedIcon />{data.length} Комментария
               </div>
               <div className="item">
                 <ShareOutlinedIcon /> Поделиться
