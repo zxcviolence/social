@@ -1,15 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectUser } from "../../features/userSlice";
-// import { selectComment } from "../../features/userDataSlice";
-import "./comments.scss";
+import { AuthContext } from "../../context/authContext";
 import {
   useAddCommentMutation,
   useGetCommentsQuery,
 } from "../../app/commentsApi";
+import "./comments.scss";
 
 const Comments = () => {
-  const currentUser = useSelector(selectUser);
+  const { currentUser } = React.useContext(AuthContext);
 
   const [count, setCount] = React.useState("");
   const [newComment, setNewComment] = React.useState("");
@@ -19,7 +17,11 @@ const Comments = () => {
 
   const handleAddNewComment = async () => {
     if (newComment) {
-      await addComment({ comment: newComment, name: currentUser.name, avatar: currentUser.image }).unwrap();
+      await addComment({
+        comment: newComment,
+        name: currentUser.name,
+        avatar: currentUser.image,
+      }).unwrap();
     }
     setNewComment("");
   };
@@ -30,7 +32,6 @@ const Comments = () => {
 
   return (
     <div className="comments">
-
       {/* <div>
         <select value={count} onChange={e => setCount(e.target.value)}>
         <option value="">all</option>
@@ -50,16 +51,16 @@ const Comments = () => {
           <span className="date">1 час назад</span>
         </div>
       ))}
-        <div className="write">
-          <img src={currentUser.image} alt="avatar" />
-          <input
-            value={newComment}
-            onChange={e => setNewComment(e.target.value)}
-            type="text"
-            placeholder="Напишите свой комментарий"
-          />
-          <button onClick={handleAddNewComment}>Отправить</button>
-        </div>
+      <div className="write">
+        <img src={currentUser.image} alt="avatar" />
+        <input
+          value={newComment}
+          onChange={e => setNewComment(e.target.value)}
+          type="text"
+          placeholder="Напишите свой комментарий"
+        />
+        <button onClick={handleAddNewComment}>Отправить</button>
+      </div>
     </div>
   );
 };

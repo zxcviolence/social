@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import Posts from "../../components/posts";
 import FacebookTwoToneIcon from "@mui/icons-material/FacebookTwoTone";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -11,7 +12,6 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import leyla from "../../assets/avatars/leylaAv.jpeg";
 import coverPic from "../../assets/coverPics/cover.jpg";
-import Swal from "sweetalert2";
 import "./profile.scss";
 
 const Profile = () => {

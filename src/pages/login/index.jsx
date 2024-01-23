@@ -1,23 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { selectUser } from "../../features/userSlice";
+import { AuthContext } from "../../context/authContext";
 import "./login.scss";
 
 const Login = () => {
-  const authUser = useSelector(selectUser);
+  const { login } = React.useContext(AuthContext);
 
-  const [currentUser, setCurrentUser] = React.useState(
-    JSON.parse(localStorage.getItem("user")) || false
-  );
-
-  const login = () => {
-    setCurrentUser(authUser);
+  const handleLogin = async () => {
+    await login();
   };
-
-  React.useEffect(() => {
-    localStorage.setItem("user", JSON.stringify(currentUser));
-  }, [currentUser]);
 
   return (
     <div className="login">
@@ -25,7 +16,7 @@ const Login = () => {
         <div className="left">
           <h1>Welcome</h1>
           <p>
-            Ключевые ценности ZXCSocial — наши пользователи и команда. Соединяя
+            Ключевые ценности GSX — наши пользователи и команда. Соединяя
             миллионы людей и передовые технологии, мы создаём простые и удобные
             сервисы, которые позволяют общаться с друзьями, развивать бизнес,
             учиться и отдыхать, заниматься повседневными вопросами, получать
@@ -41,7 +32,7 @@ const Login = () => {
           <form>
             <input type="text" placeholder="Имя пользователя" />
             <input type="password" placeholder="Пароль" />
-            <button onClick={() => login()}>Войти</button>
+            <button onClick={handleLogin}>Войти</button>
           </form>
         </div>
       </div>

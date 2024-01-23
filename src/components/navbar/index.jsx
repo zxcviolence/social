@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { selectUser } from "../../features/userSlice";
 import { DarkModeContext } from "../../context/darkModeContext";
+import { AuthContext } from "../../context/authContext";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
@@ -15,13 +14,13 @@ import "./navbar.scss";
 
 const Navbar = () => {
   const { toggle, darkMode } = React.useContext(DarkModeContext);
-  const currentUser = useSelector(selectUser);
+  const { currentUser } = React.useContext(AuthContext);
 
   return (
     <div className="navbar">
       <div className="left">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span>ZXCSocial</span>
+          <span>GSX</span>
         </Link>
         <HomeOutlinedIcon />
         {darkMode ? (
