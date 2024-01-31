@@ -13,12 +13,8 @@ import janePostImg from "../assets/postImage/janedoePost.jpg";
 // Аватарки
 import leyla from "../assets/avatars/leylaAv.jpeg";
 import janeAv from "../assets/avatars/janedoeAv.jpg";
-import chelsey from "../assets/avatars/chelseyAv.jpg";
-import cullen from "../assets/avatars/cullenAv.jpg";
 import dustin from "../assets/avatars/dustinAv.jpg";
-import jae from "../assets/avatars/jaeAv.jpg";
 import malcolm from "../assets/avatars/malkolmAv.jpg";
-import sal from "../assets/avatars/salAv.jpg";
 import selma from "../assets/avatars/selmaAv.jpeg";
 import john from "../assets/avatars/jonhdoeAv.jpg";
 import jane from "../assets/avatars/janedoeAv.jpg";
@@ -68,48 +64,6 @@ const initialState = {
       avatar: jane,
       action: "опубликовала пост",
       time: "6 мин назад",
-    },
-  ],
-  friends: [
-    {
-      id: 1,
-      name: "Chelsey Sidney",
-      avatar: chelsey,
-    },
-    {
-      id: 2,
-      name: "John Doe",
-      avatar: john,
-    },
-    {
-      id: 3,
-      name: "Dustin Jules",
-      avatar: dustin,
-    },
-    {
-      id: 4,
-      name: "Rylie Leyla",
-      avatar: leyla,
-    },
-    {
-      id: 5,
-      name: "Jane Doe",
-      avatar: jane,
-    },
-    {
-      id: 6,
-      name: "Jae Jocelyn",
-      avatar: jae,
-    },
-    {
-      id: 7,
-      name: "Sal Rube",
-      avatar: sal,
-    },
-    {
-      id: 8,
-      name: "Cullen Roxane",
-      avatar: cullen,
     },
   ],
   stories: [
@@ -164,7 +118,6 @@ export const userDataSlice = createSlice({
 export const selectStory = state => state.data.stories;
 export const selectPost = state => state.data.posts;
 
-export const selectFriends = state => state.data.friends;
 export const selectSuggtstions = state => state.data.suggestions;
 export const selectActions = state => state.data.actions;
 

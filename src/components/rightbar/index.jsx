@@ -1,23 +1,21 @@
+import React from "react";
 import { useSelector } from "react-redux";
-import {
-  selectActions,
-  selectFriends,
-  selectSuggtstions,
-} from "../../features/userDataSlice";
-import "./rightbar.scss";
+import { selectActions, selectSuggtstions } from "../../features/userDataSlice";
+import { useGetFriendsQuery } from "../../app/friendsApi";
 import { Link } from "react-router-dom";
+import "./rightbar.scss";
 
 const Rightbar = () => {
-  const data = useSelector(selectSuggtstions);
+  const suggestions = useSelector(selectSuggtstions);
   const actions = useSelector(selectActions);
-  const friends = useSelector(selectFriends);
+  const { data = [] } = useGetFriendsQuery();
 
   return (
     <div className="rightbar">
       <div className="container">
         <div className="item">
           <span>Рекомендовано для вас</span>
-          {data.map(item => (
+          {suggestions.map(item => (
             <div key={item.id}>
               <div className="user">
                 <div className="userInfo">
@@ -53,7 +51,7 @@ const Rightbar = () => {
         </div>
         <div className="item">
           <span>Друзья в сети</span>
-          {friends.map(item => (
+          {data.map(item => (
             <div key={item.id} className="user">
               <div className="userInfo">
                 <img src={item.avatar} alt="avatar" />

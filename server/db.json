@@ -18,5 +18,47 @@
       "avatar": "https://polinka.top/uploads/posts/2023-05/thumbs/1684411954_polinka-top-p-cherno-belie-kartinki-anime-klinok-rasseka-42.jpg",
       "id": 3
     }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "Chelsey Sidney",
+      "avatar": "https://sun9-80.userapi.com/impg/8Kch8neHC-tl4rQTGPX615uNdCg5HEITXIeSmQ/xcsxxaAj36U.jpg?size=604x604&quality=96&sign=ee1e8d88ff72220bf31230d97cc24cb5&type=album"
+    },
+    {
+      "id": 2,
+      "name": "John Doe",
+      "avatar": "https://i.pinimg.com/1200x/2c/50/da/2c50da6818cfb922581a77079835db0d.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Dustin Jules",
+      "avatar": "https://flomaster.top/uploads/posts/2023-10/1697525754_flomaster-top-p-random-risunok-vkontakte-6.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Rylie Leyla",
+      "avatar": "https://99px.ru/sstorage/56/2015/08/mid_213174_9011.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Jane Doe",
+      "avatar": "https://masterpiecer-images.s3.yandex.net/ceac7859705b11eeb75fe6d39d9a42a4:upscaled"
+    },
+    {
+      "id": 6,
+      "name": "Jae Jocelyn",
+      "avatar": "https://pm1.aminoapps.com/8221/a3e02e5c61f4ed76669fa31dad5e01ebc370dd12r1-564-564v2_hq.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Sal Rube",
+      "avatar": "https://i.pinimg.com/236x/82/51/b9/8251b94fe46ea49ac670b9bdddcb4896.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Cullen Roxane",
+      "avatar": "https://trikky.ru/wp-content/blogs.dir/1/files/2020/12/27/izobrazhenie_viber_2020-12-27_17-34-45.jpg"
+    }
   ]
 }
